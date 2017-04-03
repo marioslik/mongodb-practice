@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dogs</title>
+</head>
+<body>
+  <h1>Dogs list</h1>
+
+  <ul class="dogs">
+    <% for(var i=0; i<dogs.length; i++) {%>
+      <li class="dog">
+        <span>Breed: </span><span><%= dogs[i].breed %></span>
+        <span>Weight: </span><span><%= dogs[i].weight %></span>
+        <span>Height: </span><span><%= dogs[i].height %></span>
+        <span>Year: </span><span><%= dogs[i].year %></span>
+      </li>
+    <% } %>
+  </ul>
+
+  <div>
+    <form action="/dogs" method="POST">
+      <input type="text" placeholder="breed" name="breed">
+      <input type="text" placeholder="weight" name="weight">
+      <input type="text" placeholder="height" name="height">
+      <input type="text" placeholder="year of birth" name="year">
+      <button type="submit">Submit</button>
+    </form>
+</div>
+<div>
+  <h2>Replace dog breed with stray dog.</h2>
+  <button id="update"> Make it a stray dog breed! </button>
+</div>
+
+<div>
+  <h2>Delete first dog</h2>
+  <button id="delete"> Delete </button>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
